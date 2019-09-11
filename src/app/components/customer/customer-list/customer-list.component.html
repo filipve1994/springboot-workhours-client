@@ -1,0 +1,34 @@
+<ul *ngIf="customersObservable | async as customers else empty">
+
+  <li *ngFor="let customer of customers">
+    <span>ID : {{customer.id}}</span><br>
+    <span>Name: {{customer.name}}</span><br>
+    <span>Email : {{customer.email}}</span><br>
+    <span>PHONE : {{customer.phone}}</span><br>
+    <span>CITY : {{customer.city}}</span><br>
+    <span>COUNTRY : {{customer.country}}</span><br>
+    <span>TITLE : {{customer.title}}</span><br>
+  </li>
+
+</ul>
+
+<ng-template #empty> No Customers Yet </ng-template>
+
+<hr/>
+
+<ul *ngIf="customersObservable2 | async as customers2 else empty2">
+
+  <li *ngFor="let customer of customers2">
+    <span>ID : {{customer.id}}</span><br>
+    <span>Name: {{customer.name}}</span><br>
+    <span>Email : {{customer.email}}</span><br>
+    <span>PHONE : {{customer.phone}}</span><br>
+    <span>CITY : {{customer.city}}</span><br>
+    <span>COUNTRY : {{customer.country}}</span><br>
+    <span>TITLE : {{customer.title}}</span><br>
+
+  </li>
+
+</ul>
+
+<ng-template #empty2> No Customers2 Yet </ng-template>

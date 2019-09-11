@@ -1,0 +1,12 @@
+{
+  "demo": {
+    "title": "Vertaling demo",
+    "text": "Dit is een simpele demonstratie applicatie voor ngx-translate",
+    "greeting": "Hallo {{name}}!"
+  },
+  "welcomeMessage": "Bedankt om je aan te melden, {{ firstName }}! Het is fantastisch dat je hier bent!",
+  "login": {
+    "username": "Vul je username in aub",
+    "password": "Password hier"
+  }
+}

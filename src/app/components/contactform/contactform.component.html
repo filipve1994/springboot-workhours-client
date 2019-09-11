@@ -1,0 +1,28 @@
+<h1> Template-Based Contact Form Example </h1>
+
+<form #myform="ngForm" (ngSubmit)="onSubmit(myform)">
+  <input type="text" name="fullName" placeholder="Your full name" ngModel>
+  <br/>
+
+  <input type="email" name="email" placeholder="Your email" ngModel>
+  <br/>
+
+  <textarea name="message" placeholder="Your message" ngModel></textarea>
+  <br/>
+  <input type="submit" value="Send">
+</form>
+
+
+<h1> Reactive Contact Form Example2 </h1>
+
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit2()">
+  <input type="text" name="fullName2" placeholder="Your full name2" formControlName="fullName2">
+  <br/>
+
+  <input type="email" name="email2" placeholder="Your email2" formControlName="email2">
+  <br/>
+
+  <textarea name="message2" placeholder="Your message2" formControlName="message2"></textarea>
+  <br/>
+  <input type="submit" value="Send2">
+</form>
