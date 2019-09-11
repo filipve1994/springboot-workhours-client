@@ -1,84 +1,125 @@
+<div class="main-container">
 
+  <mat-toolbar color="topbar telative mat-toolbar mat-primary mat-toolbar-single-row primary">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">
+        <b>
+          <img alt="homepage" class="dark-logo" src="assets/images/logo-icon.png">
+          <img
+            alt="homepage" class="light-logo" src="assets/images/logo-light-icon.png">
+        </b>
+        <span fxshow="false" fxshow.gt-xs="">
+          <img
+            alt="homepage" class="dark-logo" src="assets/images/logo-text.png">
+          <img alt="homepage" class="light-logo" src="assets/images/logo-light-text.png">
+        </span>
+      </a>
+    </div>
 
-<mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <button mat-icon-button>
-      <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+    <button mat-icon-button="" value="sidebarclosed" class="mat-icon-button">
+      <span class="mat-button-wrapper">
+        <mat-icon
+          class="mat-icon notranslate material-icons mat-icon-no-color" role="img" aria-hidden="true">menu</mat-icon>
+      </span>
+      <div class="mat-button-ripple mat-ripple mat-button-ripple-round" matripple=""></div>
+      <div class="mat-button-focus-overlay"></div>
     </button>
-    <h1>FILIPDASHBOARD</h1>
-    <span class="menu-spacer"></span>
-    <div>
-      <a mat-button [routerLink]="'/accounts'"> Accounts </a>
-      <a mat-button [routerLink]="'/create-account'"> Create Account </a>
-      <a mat-button [routerLink]="'/contacts'"> Contacts </a>
-      <a mat-button [routerLink]="'/create-contact'"> Create Contact </a>
-      <a mat-button [routerLink]="'/activities'"> Activities </a>
-      <a mat-button [routerLink]="'/create-activity'"> Create Activity </a>
-      <a mat-button [routerLink]="'/customerlist'"> customerlist</a>
-      <a mat-button [routerLink]="'/customerdetails/:id'"> customerdetails id </a>
-      <a mat-button [routerLink]="'/customercreate'"> customercreate </a>
-      <a mat-button [routerLink]="'/customersupdate'"> customersupdate </a>
-      <a mat-button [routerLink]="'/calculator'"> calculator </a>
-      <a mat-button [routerLink]="'/contactform'"> contactform </a>
-      <a mat-button [routerLink]="'/login'"> login </a>
-      <a mat-button [routerLink]="'/register'"> register </a>
-    </div>
-  </mat-toolbar-row>
-</mat-toolbar>
 
-<mat-sidenav-container>
-<!--  <mat-sidenav #sidenav opened="true">-->
-  <mat-sidenav #sidenav [opened]="true" [mode]="'side'">
-    <mat-nav-list>
+    <button class="srh-btn mat-icon-button" mat-icon-button=""><span class="mat-button-wrapper"><mat-icon
+      class="mat-icon notranslate material-icons mat-icon-no-color" role="img"
+      aria-hidden="true">search</mat-icon></span>
+      <div class="mat-button-ripple mat-ripple mat-button-ripple-round" matripple=""></div>
+      <div class="mat-button-focus-overlay"></div>
+    </button>
 
-      <a mat-list-item [routerLink]="'/accounts'"> Accounts </a>
-      <a mat-list-item [routerLink]="'/create-account'"> Create Account </a>
-      <a mat-list-item [routerLink]="'/contacts'"> Contacts </a>
-      <a mat-list-item [routerLink]="'/create-contact'"> Create Contact </a>
-      <a mat-list-item [routerLink]="'/activities'"> Activities </a>
-      <a mat-list-item [routerLink]="'/create-activity'"> Create Activity </a>
-      <a mat-list-item [routerLink]="'/customerlist'"> customerlist</a>
-      <a mat-list-item [routerLink]="'/customerdetails/:id'"> customerdetails id </a>
-      <a mat-list-item [routerLink]="'/customercreate'"> customercreate </a>
-      <a mat-list-item [routerLink]="'/customersupdate'"> customersupdate </a>
-      <a mat-list-item [routerLink]="'/calculator'"> calculator </a>
-      <a mat-list-item [routerLink]="'/contactform'"> contactform </a>
-      <a mat-list-item [routerLink]="'/login'"> login </a>
-      <a mat-list-item [routerLink]="'/register'"> register </a>
-      <a mat-list-item (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
-
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <div style="height: 88vh;">
-
-      <router-outlet></router-outlet>
-    </div>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+    <app-header>
+      <button aria-haspopup="true" class="m-r-10 mat-icon-button" mat-icon-button=""><span class="mat-button-wrapper"><mat-icon
+        class="mat-icon notranslate material-icons mat-icon-no-color" role="img" aria-hidden="true">message</mat-icon><div
+        class="notify"><span class="heartbit"></span><span class="point"></span></div></span>
+        <div class="mat-button-ripple mat-ripple mat-button-ripple-round" matripple=""></div>
+        <div class="mat-button-focus-overlay"></div>
+      </button>
+      <mat-menu class=""><!----></mat-menu>
+      <button aria-haspopup="true" class="m-r-10 mat-icon-button" mat-icon-button=""><span class="mat-button-wrapper"><mat-icon
+        class="mat-icon notranslate material-icons mat-icon-no-color" role="img" aria-hidden="true">email</mat-icon><div
+        class="notify"><span class="heartbit"></span><span class="point"></span></div></span>
+        <div class="mat-button-ripple mat-ripple mat-button-ripple-round" matripple=""></div>
+        <div class="mat-button-focus-overlay"></div>
+      </button>
+      <mat-menu class=""><!----></mat-menu>
+      <button aria-haspopup="true" class="m-r-5 mat-icon-button" mat-icon-button=""><span
+        class="mat-button-wrapper"><img alt="user" class="profile-pic" src="assets/images/users/1.jpg"></span>
+        <div class="mat-button-ripple mat-ripple mat-button-ripple-round" matripple=""></div>
+        <div class="mat-button-focus-overlay"></div>
+      </button>
+      <mat-menu class=""><!----></mat-menu>
+    </app-header>
 
 
-<div>
-  <!-- translation: translation pipe -->
-  <h1>{{ 'demo.title' | translate }}</h1>
+    <mat-toolbar-row>
+      <button mat-icon-button>
+        <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+      </button>
+      <h1>FILIPDASHBOARD</h1>
+      <span class="menu-spacer"></span>
 
-  <!-- translation: directive (key as attribute)-->
-  <p [translate]="'demo.text'"></p>
+    </mat-toolbar-row>
+  </mat-toolbar>
 
-  <!-- translation: directive (key as content of element) -->
-  <p translate>demo.text</p>
+  <mat-sidenav-container class="mat-drawer-container mat-sidenav-container example-sidenav-container mat-drawer-transition">
+    <!--  <mat-sidenav #sidenav opened="true">-->
+    <mat-sidenav #sidenav [opened]="true" [mode]="'side'">
+      <mat-nav-list>
 
-  <!-- translation: translation pipe -->
-  <p>{{ 'demo.greeting' | translate:{'name': 'Andreas'} }}</p>
+        <a mat-list-item [routerLink]="'/accounts'"> Accounts </a>
+        <a mat-list-item [routerLink]="'/create-account'"> Create Account </a>
+        <a mat-list-item [routerLink]="'/contacts'"> Contacts </a>
+        <a mat-list-item [routerLink]="'/create-contact'"> Create Contact </a>
+        <a mat-list-item [routerLink]="'/activities'"> Activities </a>
+        <a mat-list-item [routerLink]="'/create-activity'"> Create Activity </a>
+        <a mat-list-item [routerLink]="'/customerlist'"> customerlist</a>
+        <a mat-list-item [routerLink]="'/customerdetails/:id'"> customerdetails id </a>
+        <a mat-list-item [routerLink]="'/customercreate'"> customercreate </a>
+        <a mat-list-item [routerLink]="'/customersupdate'"> customersupdate </a>
+        <a mat-list-item [routerLink]="'/calculator'"> calculator </a>
+        <a mat-list-item [routerLink]="'/contactform'"> contactform </a>
+        <a mat-list-item [routerLink]="'/login'"> login </a>
+        <a mat-list-item [routerLink]="'/register'"> register </a>
+        <a mat-list-item (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
 
-  <!-- translation: directive (key as attribute) -->
-  <p [translate]="'demo.greeting'" [translateParams]="{name: 'Andreas'}"></p>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div style="height: 88vh;">
 
-  <!-- translation: directive (key as content of element)-->
-  <p translate [translateParams]="{name: 'Andreas'}">demo.greeting</p>
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 
-  <button (click)="useLanguage('en')">en</button>
-  <button (click)="useLanguage('nl')">nl</button>
 
+  <div>
+    <!-- translation: translation pipe -->
+    <h1>{{ 'demo.title' | translate }}</h1>
+
+    <!-- translation: directive (key as attribute)-->
+    <p [translate]="'demo.text'"></p>
+
+    <!-- translation: directive (key as content of element) -->
+    <p translate>demo.text</p>
+
+    <!-- translation: translation pipe -->
+    <p>{{ 'demo.greeting' | translate:{'name': 'Andreas'} }}</p>
+
+    <!-- translation: directive (key as attribute) -->
+    <p [translate]="'demo.greeting'" [translateParams]="{name: 'Andreas'}"></p>
+
+    <!-- translation: directive (key as content of element)-->
+    <p translate [translateParams]="{name: 'Andreas'}">demo.greeting</p>
+
+    <button (click)="useLanguage('en')">en</button>
+    <button (click)="useLanguage('nl')">nl</button>
+
+  </div>
+  <!--main-container-->
 </div>
-
