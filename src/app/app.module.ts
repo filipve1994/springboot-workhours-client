@@ -23,6 +23,14 @@ import {CustomerCreateComponent} from './components/customer/customer-create/cus
 import {CustomerUpdateComponent} from './components/customer/customer-update/customer-update.component';
 import {CalculatorComponent} from './components/calculator/calculator.component';
 import {ContactformComponent} from './components/contactform/contactform.component';
+import { HeaderComponent } from './layout/header/header.component';
+import { FooterComponent } from './layout/footer/footer.component';
+import { SidebarComponent } from './layout/sidebar/sidebar.component';
+import { HomeComponent } from './views/home/home.component';
+import { AboutComponent } from './views/about/about.component';
+import { ContactComponent } from './views/contact/contact.component';
+import { RegisterComponent } from './auth/views/register/register.component';
+import { LoginComponent } from './auth/views/login/login.component';
 
 
 @NgModule({
@@ -40,6 +48,14 @@ import {ContactformComponent} from './components/contactform/contactform.compone
     CustomerUpdateComponent,
     CalculatorComponent,
     ContactformComponent,
+    HeaderComponent,
+    FooterComponent,
+    SidebarComponent,
+    HomeComponent,
+    AboutComponent,
+    ContactComponent,
+    RegisterComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

@@ -20,17 +20,15 @@
       <a mat-button [routerLink]="'/customersupdate'"> customersupdate </a>
       <a mat-button [routerLink]="'/calculator'"> calculator </a>
       <a mat-button [routerLink]="'/contactform'"> contactform </a>
+      <a mat-button [routerLink]="'/login'"> login </a>
+      <a mat-button [routerLink]="'/register'"> register </a>
     </div>
-  </mat-toolbar-row>
-
-  <mat-toolbar-row>
-    <span style="font-size: 12px;">FILIPDASHBOARD helps you easily to learn angular 8</span>
   </mat-toolbar-row>
 </mat-toolbar>
 
 <mat-sidenav-container>
 <!--  <mat-sidenav #sidenav opened="true">-->
-  <mat-sidenav #sidenav opened="false">
+  <mat-sidenav #sidenav [opened]="true" [mode]="'side'">
     <mat-nav-list>
 
       <a mat-list-item [routerLink]="'/accounts'"> Accounts </a>
@@ -45,6 +43,8 @@
       <a mat-list-item [routerLink]="'/customersupdate'"> customersupdate </a>
       <a mat-list-item [routerLink]="'/calculator'"> calculator </a>
       <a mat-list-item [routerLink]="'/contactform'"> contactform </a>
+      <a mat-list-item [routerLink]="'/login'"> login </a>
+      <a mat-list-item [routerLink]="'/register'"> register </a>
       <a mat-list-item (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
 
     </mat-nav-list>

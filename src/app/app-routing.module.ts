@@ -13,6 +13,8 @@ import { CustomerCreateComponent } from './components/customer/customer-create/c
 import { CustomerUpdateComponent } from './components/customer/customer-update/customer-update.component';
 import {CalculatorComponent} from "./components/calculator/calculator.component";
 import {ContactformComponent} from "./components/contactform/contactform.component";
+import {RegisterComponent} from "./auth/views/register/register.component";
+import {LoginComponent} from "./auth/views/login/login.component";
 
 
 const routes: Routes = [
@@ -49,6 +51,8 @@ const routes: Routes = [
 
   { path: 'calculator', component: CalculatorComponent},
   { path: 'contactform', component: ContactformComponent},
+  { path: 'login', component: LoginComponent},
+  { path: 'register', component: RegisterComponent},
 
 
 ];
