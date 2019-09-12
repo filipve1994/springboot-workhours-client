@@ -1,17 +1,13 @@
 <div class="main-container">
 
-  <mat-toolbar color="topbar telative mat-toolbar mat-primary mat-toolbar-single-row primary">
+  <!--  <mat-toolbar color="primary" class="topbar telative mat-toolbar mat-primary mat-toolbar-single-row">-->
+  <mat-toolbar color="primary">
     <div class="navbar-header">
       <a class="navbar-brand" href="/">
-        <b>
-          <img alt="homepage" class="dark-logo" src="assets/images/logo-icon.png">
-          <img
-            alt="homepage" class="light-logo" src="assets/images/logo-light-icon.png">
-        </b>
         <span fxshow="false" fxshow.gt-xs="">
-          <img
-            alt="homepage" class="dark-logo" src="assets/images/logo-text.png">
-          <img alt="homepage" class="light-logo" src="assets/images/logo-light-text.png">
+          <img alt="homepagesecond" class="dark-logo" src="assets/images/logo/profile.png" width="148px">
+<!--          <img alt="homepagesecondlight" class="light-logo" src="assets/images/logo/profile.png" width="148px">-->
+          <img alt="homepagesecondlight" class="light-logo" src="assets/images/logo/vector/default-monochrome-white.svg" width="148px" style="height:30px;">
         </span>
       </a>
     </div>
@@ -19,7 +15,8 @@
     <button mat-icon-button="" value="sidebarclosed" class="mat-icon-button">
       <span class="mat-button-wrapper">
         <mat-icon
-          class="mat-icon notranslate material-icons mat-icon-no-color" role="img" aria-hidden="true">menu</mat-icon>
+          class="mat-icon notranslate material-icons mat-icon-no-color" role="img" aria-hidden="true"
+          (click)="sidenav.toggle()">menu</mat-icon>
       </span>
       <div class="mat-button-ripple mat-ripple mat-button-ripple-round" matripple=""></div>
       <div class="mat-button-focus-overlay"></div>
@@ -54,23 +51,17 @@
       </button>
       <mat-menu class=""><!----></mat-menu>
     </app-header>
-
-
-    <mat-toolbar-row>
-      <button mat-icon-button>
-        <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
-      </button>
-      <h1>FILIPDASHBOARD</h1>
-      <span class="menu-spacer"></span>
-
-    </mat-toolbar-row>
   </mat-toolbar>
 
-  <mat-sidenav-container class="mat-drawer-container mat-sidenav-container example-sidenav-container mat-drawer-transition">
+  <mat-sidenav-container
+    class="mat-drawer-container mat-sidenav-container example-sidenav-container mat-drawer-transition">
     <!--  <mat-sidenav #sidenav opened="true">-->
-    <mat-sidenav #sidenav [opened]="true" [mode]="'side'">
-      <mat-nav-list>
+    <mat-sidenav #snav [opened]="true" [mode]="'side'"
+                 class="pl-xs mat-drawer mat-sidenav ng-tns-c5-0 ng-trigger ng-trigger-transform ps mat-drawer-side ng-star-inserted ps--active-y">
+      <div class="mat-drawer-inner-container">
+      <mat-nav-list appaccordion class="mat-nav-list mat-list-base" role="navigation">
 
+        <a mat-list-item [routerLink]="'/dashboard1'"> dashboard1 </a>
         <a mat-list-item [routerLink]="'/accounts'"> Accounts </a>
         <a mat-list-item [routerLink]="'/create-account'"> Create Account </a>
         <a mat-list-item [routerLink]="'/contacts'"> Contacts </a>
@@ -85,12 +76,15 @@
         <a mat-list-item [routerLink]="'/contactform'"> contactform </a>
         <a mat-list-item [routerLink]="'/login'"> login </a>
         <a mat-list-item [routerLink]="'/register'"> register </a>
-        <a mat-list-item (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
+        <a mat-list-item (click)="snav.toggle()" href="" mat-list-item>Close</a>
 
       </mat-nav-list>
+
+      </div>
     </mat-sidenav>
-    <mat-sidenav-content>
-      <div style="height: 88vh;">
+
+    <mat-sidenav-content class="page-wrapper mat-drawer-content mat-sidenav-content">
+      <div style="height: 88vh;" class="page-content">
 
         <router-outlet></router-outlet>
       </div>
@@ -98,28 +92,30 @@
   </mat-sidenav-container>
 
 
-  <div>
-    <!-- translation: translation pipe -->
-    <h1>{{ 'demo.title' | translate }}</h1>
+<!--  <div>-->
+<!--    &lt;!&ndash; translation: translation pipe &ndash;&gt;-->
+<!--    <h1>{{ 'demo.title' | translate }}</h1>-->
 
-    <!-- translation: directive (key as attribute)-->
-    <p [translate]="'demo.text'"></p>
+<!--    &lt;!&ndash; translation: directive (key as attribute)&ndash;&gt;-->
+<!--    <p [translate]="'demo.text'"></p>-->
 
-    <!-- translation: directive (key as content of element) -->
-    <p translate>demo.text</p>
+<!--    &lt;!&ndash; translation: directive (key as content of element) &ndash;&gt;-->
+<!--    <p translate>demo.text</p>-->
 
-    <!-- translation: translation pipe -->
-    <p>{{ 'demo.greeting' | translate:{'name': 'Andreas'} }}</p>
+<!--    &lt;!&ndash; translation: translation pipe &ndash;&gt;-->
+<!--    <p>{{ 'demo.greeting' | translate:{'name': 'Andreas'} }}</p>-->
 
-    <!-- translation: directive (key as attribute) -->
-    <p [translate]="'demo.greeting'" [translateParams]="{name: 'Andreas'}"></p>
+<!--    &lt;!&ndash; translation: directive (key as attribute) &ndash;&gt;-->
+<!--    <p [translate]="'demo.greeting'" [translateParams]="{name: 'Andreas'}"></p>-->
 
-    <!-- translation: directive (key as content of element)-->
-    <p translate [translateParams]="{name: 'Andreas'}">demo.greeting</p>
+<!--    &lt;!&ndash; translation: directive (key as content of element)&ndash;&gt;-->
+<!--    <p translate [translateParams]="{name: 'Andreas'}">demo.greeting</p>-->
 
-    <button (click)="useLanguage('en')">en</button>
-    <button (click)="useLanguage('nl')">nl</button>
+<!--    <button (click)="useLanguage('en')">en</button>-->
+<!--    <button (click)="useLanguage('nl')">nl</button>-->
 
-  </div>
+<!--  </div>-->
+
+
   <!--main-container-->
 </div>

@@ -1,6 +1,9 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { ChartistModule } from 'ng-chartist';
+import { ChartsModule } from 'ng2-charts';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -36,6 +39,10 @@ import {MatCardModule} from "@angular/material/card";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatMenuModule} from "@angular/material/menu";
+import { Dashboard1Component } from './dashboard/views/dashboard1/dashboard1.component';
+import { BarchartComponent } from './dashboard/components/barchart/barchart.component';
+import { PiechartComponent } from './dashboard/components/piechart/piechart.component';
+import { Barchart2Component } from './dashboard/components/ng2/barchart2/barchart2.component';
 
 
 @NgModule({
@@ -61,11 +68,17 @@ import {MatMenuModule} from "@angular/material/menu";
     ContactComponent,
     RegisterComponent,
     LoginComponent,
+    Dashboard1Component,
+    BarchartComponent,
+    PiechartComponent,
+    Barchart2Component,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    FlexLayoutModule,
+
     AppRoutingModule,
     // ngx-translate and the loader module
     HttpClientModule,
@@ -86,7 +99,9 @@ import {MatMenuModule} from "@angular/material/menu";
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    MatMenuModule
+    MatMenuModule,
+    ChartistModule, // add ChartistModule to your imports
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

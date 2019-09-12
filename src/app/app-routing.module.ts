@@ -15,11 +15,12 @@ import {CalculatorComponent} from "./components/calculator/calculator.component"
 import {ContactformComponent} from "./components/contactform/contactform.component";
 import {RegisterComponent} from "./auth/views/register/register.component";
 import {LoginComponent} from "./auth/views/login/login.component";
+import {Dashboard1Component} from "./dashboard/views/dashboard1/dashboard1.component";
 
 
 const routes: Routes = [
 
-  {path: '', redirectTo: 'contacts', pathMatch: 'full'},
+  {path: '', redirectTo: 'dashboard1', pathMatch: 'full'},
   {
     path: 'accounts',
     component: AccountListComponent
@@ -53,6 +54,7 @@ const routes: Routes = [
   {path: 'contactform', component: ContactformComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
+  {path: 'dashboard1', component: Dashboard1Component},
 
 
 ];
