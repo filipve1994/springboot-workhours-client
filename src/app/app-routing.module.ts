@@ -16,6 +16,7 @@ import {ContactformComponent} from "./components/contactform/contactform.compone
 import {RegisterComponent} from "./auth/views/register/register.component";
 import {LoginComponent} from "./auth/views/login/login.component";
 import {Dashboard1Component} from "./dashboard/views/dashboard1/dashboard1.component";
+import {FormlayoutComponent} from "./dashboard/views/forms/formlayout/formlayout.component";
 
 
 const routes: Routes = [
@@ -55,6 +56,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'dashboard1', component: Dashboard1Component},
+  {path: 'form-layout', component: FormlayoutComponent},
 
 
 ];

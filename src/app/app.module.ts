@@ -43,6 +43,9 @@ import { Dashboard1Component } from './dashboard/views/dashboard1/dashboard1.com
 import { BarchartComponent } from './dashboard/components/barchart/barchart.component';
 import { PiechartComponent } from './dashboard/components/piechart/piechart.component';
 import { Barchart2Component } from './dashboard/components/ng2/barchart2/barchart2.component';
+import { FormbasiclayoutComponent } from './dashboard/components/samples/formbasiclayout/formbasiclayout.component';
+import { FormlayoutComponent } from './dashboard/views/forms/formlayout/formlayout.component';
+import {MatSelectModule} from "@angular/material/select";
 
 
 @NgModule({
@@ -72,6 +75,8 @@ import { Barchart2Component } from './dashboard/components/ng2/barchart2/barchar
     BarchartComponent,
     PiechartComponent,
     Barchart2Component,
+    FormbasiclayoutComponent,
+    FormlayoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -101,7 +106,8 @@ import { Barchart2Component } from './dashboard/components/ng2/barchart2/barchar
     MatInputModule,
     MatMenuModule,
     ChartistModule, // add ChartistModule to your imports
-    ChartsModule
+    ChartsModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

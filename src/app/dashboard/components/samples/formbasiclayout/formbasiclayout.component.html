@@ -1,0 +1,92 @@
+<form class="basic-form ng-untouched ng-pristine ng-valid" novalidate>
+  <div fxLayout="row wrap">
+
+    <div fxFlex="100" fxFlex.gt-md="100">
+
+      <mat-form-field
+        class="mat-form-field ng-tns-c16-c14 mat-primary mat-form-field-type-mat-input mat-form-field-appearance-legacy mat-form-field-can-float mat-form-field-has-label mat-form-field-hide-placeholder">
+        <input matInput placeholder="Some Text Value">
+      </mat-form-field>
+
+    </div>
+
+    <div fxFlex="100" fxFlex.gt-sm="100">
+      <mat-form-field>
+        <input matInput placeholder="EmailId" type="email">
+
+      </mat-form-field>
+    </div>
+
+    <div fxFlex="100" fxFlex.gt-sm="100">
+      <mat-form-field>
+        <input matInput placeholder="Password" type="password">
+      </mat-form-field>
+    </div>
+
+    <div fxFlex="100" fxFlex.gt-sm="100">
+      <mat-form-field [floatLabel]="'auto'">
+        <mat-label>Both a label and a placeholder</mat-label>
+        <input matInput placeholder="Simple placeholder">
+      </mat-form-field>
+    </div>
+
+    <div fxFlex="100" fxFlex.gt-sm="100">
+      <mat-form-field hintLabel="Max 10 characters">
+        <input matInput #input maxlength="10" placeholder="Enter some input">
+        <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+      </mat-form-field>
+    </div>
+
+
+    <div fxFlex="100" fxFlex.gt-sm="100">
+      <mat-form-field>
+        <select matNativeControl required>
+          <option value="option1">Option1</option>
+          <option value="option2">Option2</option>
+          <option value="option3">Option3</option>
+        </select>
+        <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+      </mat-form-field>
+    </div>
+
+
+    <div fxFlex="100" fxFlex.gt-sm="100">
+      <input placeholder="file" type="file" class="form-control b-b">
+    </div>
+
+
+    <div fxFlex="100" fxFlex.gt-sm="100">
+      <mat-form-field
+        [hideRequiredMarker]="false"
+        [floatLabel]="'auto'">
+        <mat-select required>
+          <mat-option>-- None --</mat-option>
+          <mat-option value="option">Option</mat-option>
+        </mat-select>
+        <mat-label><mat-icon>favorite</mat-icon> <b> Fancy</b> <i> placeholder</i></mat-label>
+      </mat-form-field>
+    </div>
+
+
+    <div fxFlex="100" fxFlex.gt-sm="100">
+
+    </div>
+
+
+    <div fxFlex="100" fxFlex.gt-sm="100">
+
+    </div>
+
+
+    <div fxFlex="100" fxFlex.gt-sm="100">
+
+    </div>
+
+    <div fxFlex="100" fxFlex.gt-sm="100">
+
+    </div>
+
+
+  </div>
+
+</form>
