@@ -1,9 +1,9 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { ChartistModule } from 'ng-chartist';
-import { ChartsModule } from 'ng2-charts';
+import {FlexLayoutModule} from '@angular/flex-layout';
+import {ChartistModule} from 'ng-chartist';
+import {ChartsModule} from 'ng2-charts';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -11,7 +11,7 @@ import {AppComponent} from './app.component';
 // import ngx-translate and the http loader
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {HttpClient, HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {AccountListComponent} from './components/account-list/account-list.component';
 import {AccountCreateComponent} from './components/account-create/account-create.component';
 import {ContactListComponent} from './components/contact-list/contact-list.component';
@@ -26,26 +26,29 @@ import {CustomerCreateComponent} from './components/customer/customer-create/cus
 import {CustomerUpdateComponent} from './components/customer/customer-update/customer-update.component';
 import {CalculatorComponent} from './components/calculator/calculator.component';
 import {ContactformComponent} from './components/contactform/contactform.component';
-import { HeaderComponent } from './layout/header/header.component';
-import { FooterComponent } from './layout/footer/footer.component';
-import { SidebarComponent } from './layout/sidebar/sidebar.component';
-import { HomeComponent } from './views/home/home.component';
-import { AboutComponent } from './views/about/about.component';
-import { ContactComponent } from './views/contact/contact.component';
-import { RegisterComponent } from './auth/views/register/register.component';
-import { LoginComponent } from './auth/views/login/login.component';
+import {HeaderComponent} from './layout/header/header.component';
+import {FooterComponent} from './layout/footer/footer.component';
+import {SidebarComponent} from './layout/sidebar/sidebar.component';
+import {HomeComponent} from './views/home/home.component';
+import {AboutComponent} from './views/about/about.component';
+import {ContactComponent} from './views/contact/contact.component';
+import {RegisterComponent} from './auth/views/register/register.component';
+import {LoginComponent} from './auth/views/login/login.component';
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {MatCardModule} from "@angular/material/card";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatMenuModule} from "@angular/material/menu";
-import { Dashboard1Component } from './dashboard/views/dashboard1/dashboard1.component';
-import { BarchartComponent } from './dashboard/components/barchart/barchart.component';
-import { PiechartComponent } from './dashboard/components/piechart/piechart.component';
-import { Barchart2Component } from './dashboard/components/ng2/barchart2/barchart2.component';
-import { FormbasiclayoutComponent } from './dashboard/components/samples/formbasiclayout/formbasiclayout.component';
-import { FormlayoutComponent } from './dashboard/views/forms/formlayout/formlayout.component';
+import {Dashboard1Component} from './dashboard/views/dashboard1/dashboard1.component';
+import {BarchartComponent} from './dashboard/components/barchart/barchart.component';
+import {PiechartComponent} from './dashboard/components/piechart/piechart.component';
+import {Barchart2Component} from './dashboard/components/ng2/barchart2/barchart2.component';
+import {FormbasiclayoutComponent} from './dashboard/components/samples/formbasiclayout/formbasiclayout.component';
+import {FormlayoutComponent} from './dashboard/views/forms/formlayout/formlayout.component';
 import {MatSelectModule} from "@angular/material/select";
+import {TokenInterceptor} from './interceptors/token.interceptor';
+import { ProductsComponent } from './components/products/products.component';
+import {MatTableModule} from "@angular/material/table";
 
 
 @NgModule({
@@ -77,6 +80,7 @@ import {MatSelectModule} from "@angular/material/select";
     Barchart2Component,
     FormbasiclayoutComponent,
     FormlayoutComponent,
+    ProductsComponent,
   ],
   imports: [
     BrowserModule,
@@ -107,9 +111,16 @@ import {MatSelectModule} from "@angular/material/select";
     MatMenuModule,
     ChartistModule, // add ChartistModule to your imports
     ChartsModule,
-    MatSelectModule
+    MatSelectModule,
+    MatTableModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

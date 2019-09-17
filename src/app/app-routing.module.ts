@@ -17,11 +17,29 @@ import {RegisterComponent} from "./auth/views/register/register.component";
 import {LoginComponent} from "./auth/views/login/login.component";
 import {Dashboard1Component} from "./dashboard/views/dashboard1/dashboard1.component";
 import {FormlayoutComponent} from "./dashboard/views/forms/formlayout/formlayout.component";
+import {ProductsComponent} from "./components/products/products.component";
+import {AuthGuard} from "./auth/guards/auth.guard";
 
 
 const routes: Routes = [
 
   {path: '', redirectTo: 'dashboard1', pathMatch: 'full'},
+  {
+    path: 'products',
+    canActivate: [AuthGuard],
+    component: ProductsComponent,
+    data: {title: 'List of Products'}
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+    data: {title: 'Login'}
+  },
+  {
+    path: 'register',
+    component: RegisterComponent,
+    data: {title: 'Register'}
+  },
   {
     path: 'accounts',
     component: AccountListComponent
@@ -56,6 +74,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'dashboard1', component: Dashboard1Component},
+  {path: 'home', component: Dashboard1Component},
   {path: 'form-layout', component: FormlayoutComponent},
 
 

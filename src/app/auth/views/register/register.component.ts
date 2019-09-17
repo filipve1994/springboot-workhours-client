@@ -5,6 +5,15 @@ import {subscribeOn} from "rxjs/operators";
 import {FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm, Validators} from "@angular/forms";
 import {ErrorStateMatcher} from "@angular/material/core";
 
+/** Error when invalid control is dirty, touched, or submitted. */
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    const isSubmitted = form && form.submitted;
+    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+  }
+}
+
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -25,14 +34,18 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
-      'fullName': [null, Validators.required],
-      'email': [null, Validators.required],
-      'password': [null, Validators.required]
+      // 'fullName': [null, Validators.required],
+      // 'email': [null, Validators.required],
+      // 'password': [null, Validators.required]
+
+      'fullName': ['Filip Vanden Eynde', Validators.required],
+      'email': ['email2@outlook.com', Validators.required],
+      'password': ['123456', Validators.required]
     });
   }
 
   onFormSubmit(form: NgForm) {
-    this.authService.registerNew(form)
+    this.authService.register(form)
       .subscribe(res => {
         this.router.navigate(['login']);
       }, (err) => {
@@ -40,21 +53,6 @@ export class RegisterComponent implements OnInit {
         alert(err.error);
       });
   }
-
-  register(form) {
-    console.log(form.value);
-    this.authService.register(form.value).subscribe((res) => {
-      this.router.navigateByUrl('home')
-    })
-  }
-
 }
 
 
-/** Error when invalid control is dirty, touched, or submitted. */
-class MyErrorStateMatcher implements ErrorStateMatcher {
-  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
-    const isSubmitted = form && form.submitted;
-    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
-  }
-}
