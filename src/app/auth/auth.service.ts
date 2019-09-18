@@ -4,7 +4,11 @@ import {BehaviorSubject, Observable, of} from "rxjs";
 import {User} from "./interfaces/user";
 import {JwtResponse} from "./interfaces/jwt-response";
 import {catchError, tap} from "rxjs/operators";
-const apiUrl = 'http://localhost:8060/api/auth/';
+import { JwtHelperService } from '@auth0/angular-jwt';
+import {environment} from "../../environments/environment";
+
+// const apiUrl = 'http://localhost:8060/api/auth/';
+const apiUrl = environment.apiUrl + '/auth';
 
 @Injectable({
   providedIn: 'root'
@@ -13,9 +17,17 @@ export class AuthService {
 
   isLoggedIn = false;
   redirectUrl: string;
-
+  jwt: string;
 
   constructor(private httpClient: HttpClient) {
+  }
+
+  islogin(){
+    if (localStorage.getItem('token')){
+      return this.isLoggedIn = true;
+    }else {
+      return this.isLoggedIn = false;
+    }
   }
 
   //----------------
@@ -57,6 +69,17 @@ export class AuthService {
 
       return of(result as T);
     };
+  }
+
+  parseJwt() {
+    let jwtHelper = new JwtHelperService();
+    let objJwt = jwtHelper.decodeToken(this.jwt);
+
+  }
+
+  loadToken() {
+    this.jwt= localStorage.getItem('token');
+    this.parseJwt();
   }
 
   private log(message: string) {

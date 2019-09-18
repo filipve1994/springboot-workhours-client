@@ -19,6 +19,8 @@ import {Dashboard1Component} from "./dashboard/views/dashboard1/dashboard1.compo
 import {FormlayoutComponent} from "./dashboard/views/forms/formlayout/formlayout.component";
 import {ProductsComponent} from "./components/products/products.component";
 import {AuthGuard} from "./auth/guards/auth.guard";
+import {EditProductComponent} from "./components/products/edit-product/edit-product.component";
+import {AddProductComponent} from "./components/products/add-product/add-product.component";
 
 
 const routes: Routes = [
@@ -30,6 +32,18 @@ const routes: Routes = [
     component: ProductsComponent,
     data: {title: 'List of Products'}
   },
+  {
+    path: 'edit-product/:id',
+    component: EditProductComponent,
+    data: { title: 'Edit Article' }
+  },
+  {
+    path: 'addproduct',
+    canActivate: [AuthGuard],
+    component: AddProductComponent,
+    data: { title: 'Add Product' }
+  },
+
   {
     path: 'login',
     component: LoginComponent,

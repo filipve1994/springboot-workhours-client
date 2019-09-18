@@ -49,6 +49,14 @@ import {MatSelectModule} from "@angular/material/select";
 import {TokenInterceptor} from './interceptors/token.interceptor';
 import { ProductsComponent } from './components/products/products.component';
 import {MatTableModule} from "@angular/material/table";
+import { AddProductComponent } from './components/products/add-product/add-product.component';
+import { EditProductComponent } from './components/products/edit-product/edit-product.component';
+import {PerfectScrollbarModule} from "ngx-perfect-scrollbar";
+import { AccordionDirective } from './directives/accordion/accordion.directive';
+import { AccordionLinkDirective } from './directives/accordion/accordion-link.directive';
+import { AccordionAnchorDirective } from './directives/accordion/accordion-anchor.directive';
+import {MenuItems} from "./shared/menu-items/menu-items";
+import {MatExpansionModule} from "@angular/material/expansion";
 
 
 @NgModule({
@@ -81,6 +89,11 @@ import {MatTableModule} from "@angular/material/table";
     FormbasiclayoutComponent,
     FormlayoutComponent,
     ProductsComponent,
+    AddProductComponent,
+    EditProductComponent,
+    AccordionDirective,
+    AccordionLinkDirective,
+    AccordionAnchorDirective,
   ],
   imports: [
     BrowserModule,
@@ -112,14 +125,17 @@ import {MatTableModule} from "@angular/material/table";
     ChartistModule, // add ChartistModule to your imports
     ChartsModule,
     MatSelectModule,
-    MatTableModule
+    MatTableModule,
+    PerfectScrollbarModule,
+    MatExpansionModule
   ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
       multi: true
-    }
+    },
+    MenuItems
   ],
   bootstrap: [AppComponent]
 })
